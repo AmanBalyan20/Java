@@ -7,13 +7,15 @@ public class LinkedList {
             this.next = null;
         }
     }
-        public static Node head;
-        public static Node tail;
+        public static Node head;  //Head is Initialized
+        public static Node tail;  //Tail is Initialized
+        public static int size;   //Size to Calulate LinkedList Size
 
 //---------------Adding Value at First in LinkedList------------------------------------//        
         public void addFirst(int data){
             //Creation of New Node
             Node newNode = new Node(data);
+            size++; //Size Will Increase whenever a new node is created
             
             if (head == null){
                 head = tail = newNode;
@@ -30,6 +32,8 @@ public class LinkedList {
 //---------------Adding Value at Last in LinkedList------------------------------------//        
         public void addLast(int data){
             Node newNode = new Node(data);
+            size++;
+
             if (head == null){
                 head = tail = newNode;
                 return;
@@ -45,6 +49,7 @@ public class LinkedList {
                 return;
             }
             Node newNode = new Node(data);
+            size++;
             Node temp = head;
             int i = 0;
             while (i<index-1){
@@ -81,6 +86,6 @@ public class LinkedList {
         list.print();
         list.addInBetween(2, 69);
         list.print();
-
+        System.out.println("Size of the Linked list = " +list.size);
     }
 }
