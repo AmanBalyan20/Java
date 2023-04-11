@@ -26,7 +26,7 @@ public class LinkedList {
             // Head of the list become newNode
             head = newNode;
         }
-        
+
 //---------------Adding Value at Last in LinkedList------------------------------------//        
         public void addLast(int data){
             Node newNode = new Node(data);
@@ -37,6 +37,24 @@ public class LinkedList {
             tail.next = newNode;
             tail = newNode;
         }
+
+//---------------Printing values of  LinkedList------------------------------------//
+        public void addInBetween(int index , int data){
+            if (index == 0){
+                addFirst(data);
+                return;
+            }
+            Node newNode = new Node(data);
+            Node temp = head;
+            int i = 0;
+            while (i<index-1){
+                temp = temp.next;
+                i++;
+            }
+            newNode.next = temp.next;
+            temp.next = newNode;
+        }
+        
 //---------------Printing values of  LinkedList------------------------------------//
         public void print(){
             Node temp  = head;
@@ -51,7 +69,7 @@ public class LinkedList {
     public static void main(String[] args){
         LinkedList list = new LinkedList();
         list.print();
-        list.addFirst(0);
+        list.addFirst(3);
         list.print();
         list.addFirst(2);
         list.print();
@@ -59,7 +77,9 @@ public class LinkedList {
         list.print();
         list.addFirst(0);
         list.print();
-        list.addLast(100);
+        list.addLast(74);
+        list.print();
+        list.addInBetween(2, 69);
         list.print();
 
     }
