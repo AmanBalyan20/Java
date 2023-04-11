@@ -38,7 +38,7 @@ public class LinkedList {
             tail = newNode;
         }
 
-//---------------Printing values of  LinkedList------------------------------------//
+//---------------Adding Value at given index ------------------------------------//
         public void addInBetween(int index , int data){
             if (index == 0){
                 addFirst(data);
