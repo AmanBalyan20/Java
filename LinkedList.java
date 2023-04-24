@@ -73,6 +73,7 @@ public class LinkedList {
     
     public static void main(String[] args){
         LinkedList list = new LinkedList();
+    
         list.print();
         list.addFirst(3);
         list.print();
